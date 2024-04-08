@@ -1,0 +1,24 @@
+#In the context of Istio and microservices architectures, fault injection helps validate the resilience of your services and the effectiveness of Istio's traffic management, observability, and fault tolerance features.
+#By simulating failures in communication between services, you can evaluate how Istio handles fault scenarios, such as retries, circuit breaking, and load balancing, and ensure that your system can maintain reliability and performance under adverse conditions.
+#Ultimately, fault injection enables you to build and operate more robust and resilient microservices-based applications in production environments.
+#its added to virtual service 
+# So, when traffic is routed to my-service subset v1 by this VirtualService, approximately half of the requests will experience a delay of 5 seconds before being forwarded to the destination service. 
+#This allows you to simulate latency or network issues and observe how your system behaves under such conditions.
+
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: my-service
+spec:
+  hosts:
+    - my-service
+  http:
+  - route:
+    - destination:
+        host: my-service
+        subset: v1
+    fault:
+      delay:
+        percentage:
+          value: 50
+        fixedDelay: 5s
