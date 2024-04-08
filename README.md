@@ -28,4 +28,5 @@ Platform Agnostic:
 Istio is designed to work with any container orchestration platform, including Kubernetes, OpenShift, and Nomad. 
 It integrates seamlessly with existing deployment pipelines and infrastructure, allowing you to adopt it without significant changes to your existing workflows.
 
+![Screenshot from 2024-04-08 15-02-46](https://github.com/yogithakakarla/istio-examples/assets/40813669/f54c84bc-7543-4f2a-9c9d-8e1e2e390abf)
 
